@@ -34,10 +34,18 @@
                             <a href="{{ route('blog.detail', ['id'=>$blog->id] ) }}">Ver</a>
                         </div>
                         <div class="col-md-2">
-                            <a href="#">Editar</a>
+                            <a href="{{ route('blog.edit', ['id'=>$blog->id] ) }}">Editar</a>
                         </div>
                         <div class="col-md-2">
-                            <a href="#">Borrar</a>
+                            <form action="{{ route('blog.delete', ['id'=>$blog->id] ) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                        
+                                <input name="_method" type="hidden" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                                <input type="submit" class="btn btn-primary" value="Borrar">
+                            </form>
                         </div>
 
                     </div>

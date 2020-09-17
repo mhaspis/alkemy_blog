@@ -21,7 +21,10 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/blog/create', 'BlogController@create')->name('blog.create');
-Route::get('/blog/detail/{id}', 'BlogController@detail')->name('blog.detail');
-Route::get('/blog/image/{image_path}', 'BlogController@getImage')->name('blog.getImage');
-Route::post('/blog/store', 'BlogController@store')->name('blog.store');
+Route::get('/posts/create', 'BlogController@create')->name('blog.create');
+Route::get('/posts/{id}', 'BlogController@detail')->name('blog.detail');
+Route::get('/posts/edit/{id}', 'BlogController@edit')->name('blog.edit');
+Route::patch('/posts/{id}', 'BlogController@update')->name('blog.update');
+Route::get('/posts/image/{image_path}', 'BlogController@getImage')->name('blog.getImage');
+Route::post('/posts', 'BlogController@store')->name('blog.store');
+Route::delete('/posts/{id}', 'BlogController@delete')->name('blog.delete');
