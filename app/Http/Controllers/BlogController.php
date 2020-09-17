@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use App\Blog;
@@ -42,8 +43,6 @@ class BlogController extends Controller
 		
 		$image_path = $request->file('image_path');
 		
-		
-		// Subir fichero
 		if($image_path){
 			$image_path_name = time().$image_path->getClientOriginalName();
 			Storage::disk('images')->put($image_path_name, File::get($image_path));
@@ -58,4 +57,20 @@ class BlogController extends Controller
 
 
     }
+
+    public function detail($id){
+        $blog = Blog::find($id);
+        $category = Category::where('id', '=', $blog->category_id)->first();
+
+		return view('blog.show',[
+            'blog' => $blog,
+            'category' => $category
+		]);
+    }
+    
+    public function getImage($image_path){      
+        $image = Storage::disk('images')->get($image_path);
+        
+		return new Response($image, 200);
+	}
 }

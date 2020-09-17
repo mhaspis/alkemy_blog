@@ -50,7 +50,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a href="#" class="nav-link">Inicio</a>
+                                <a href="{{ route('home') }}" class="nav-link">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('blog.create') }}" class="nav-link">Crear Blog</a>

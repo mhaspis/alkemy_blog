@@ -22,4 +22,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/blog/create', 'BlogController@create')->name('blog.create');
+Route::get('/blog/detail/{id}', 'BlogController@detail')->name('blog.detail');
+Route::get('/blog/image/{image_path}', 'BlogController@getImage')->name('blog.getImage');
 Route::post('/blog/store', 'BlogController@store')->name('blog.store');
