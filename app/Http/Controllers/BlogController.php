@@ -64,7 +64,7 @@ class BlogController extends Controller
                 'message' => 'El blog no existe!!!'
             ]);
         }
-        
+
         $blog = Blog::find($id);
         $category = Category::where('id', '=', $blog->category_id)->first();
 
@@ -73,6 +73,14 @@ class BlogController extends Controller
 		return view('blog.show',[
             'blog' => $blog,
             'category' => $category
+		]);
+    }
+
+    public function showAll(){
+        $blogs = Blog::orderBy('id', 'desc')->get();
+		
+        return view('blog.showAll',[
+			'blogs' => $blogs
 		]);
     }
     

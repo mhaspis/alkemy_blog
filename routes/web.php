@@ -23,6 +23,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/posts/create', 'BlogController@create')->name('blog.create');
 Route::get('/posts/{id}', 'BlogController@detail')->name('blog.detail');
+Route::get('/posts', 'BlogController@showAll')->name('blog.showAll');
 Route::get('/posts/edit/{id}', 'BlogController@edit')->name('blog.edit');
 Route::patch('/posts/{id}', 'BlogController@update')->name('blog.update');
 Route::get('/posts/image/{image_path}', 'BlogController@getImage')->name('blog.getImage');

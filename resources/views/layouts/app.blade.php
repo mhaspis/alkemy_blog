@@ -54,6 +54,9 @@
                             </li>
                             <li class="nav-item">
                                 <a href="{{ route('blog.create') }}" class="nav-link">Crear Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('blog.showAll') }}" class="nav-link">Ver Todas</a>
                             </li>                           
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

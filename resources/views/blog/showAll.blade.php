@@ -7,7 +7,7 @@
             @include('includes.message')
 
             <div class="card">
-                <div class="card-header">Últimas 5 publicaciones</div>
+                <div class="card-header">Todas las publicaciones</div>
                 <br>
                 <table class="table">
                     <thead class="thead-dark">
