@@ -26,7 +26,7 @@
 
                     <div class="form-group row">                      
                         <div class="col-md-7">
-                        <img src="{{ route('blog.getImage',['image_path' => $blog->image_path]) }}" /> 	
+                        <img src="{{ route('blog.getImage',['image_path' => $blog->image_path]) }}" class="img-fluid" alt="Responsive image"/> 	
                         </div>
                     </div>
 

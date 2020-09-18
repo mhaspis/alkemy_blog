@@ -59,8 +59,16 @@ class BlogController extends Controller
     }
 
     public function detail($id){
+        if(Blog::find($id) == null){
+            return redirect()->route('home')->with([
+                'message' => 'El blog no existe!!!'
+            ]);
+        }
+        
         $blog = Blog::find($id);
         $category = Category::where('id', '=', $blog->category_id)->first();
+
+        
 
 		return view('blog.show',[
             'blog' => $blog,
